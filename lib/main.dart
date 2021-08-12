@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'app/sign_in/sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-
 void main() {
   runApp(MyApp());
 }
