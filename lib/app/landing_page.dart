@@ -8,7 +8,7 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  late User _user;
+  User? _user;
 
   void _updateUser(User user) {
     print('Userid: ${user.uid}');
