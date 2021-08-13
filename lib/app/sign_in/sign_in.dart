@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'SocialSignInButton.dart';
 import 'signinbutton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 
 class SignInPage extends StatelessWidget {
   //callback for landing page
-  SignInPage({required this.onSignIn});
+  SignInPage({@required this.onSignIn});
   final Function(User) onSignIn;
 
 // signin Anonymously

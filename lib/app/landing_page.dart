@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:time_tracker_app/app/home_page.dart';
 import 'package:time_tracker_app/app/sign_in/sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:async';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _LandingPageState extends State<LandingPage> {
   }
 
   Future<void> _checkCurrentUser() async {
-    User user = await FirebaseAuth.instance.currentUser!;
+    User user = FirebaseAuth.instance.currentUser!;
     _updateUser(user);
   }
 
