@@ -9,6 +9,7 @@ class SignInPage extends StatelessWidget {
   SignInPage({required this.onSignIn});
   final Function(User) onSignIn;
 
+// signin Anonymously
   Future<void> _signInAnonymously() async {
     await Firebase.initializeApp();
     try {
