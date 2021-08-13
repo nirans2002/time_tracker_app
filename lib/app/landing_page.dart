@@ -11,6 +11,18 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   User? _user;
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _checkCurrentUser();
+  }
+
+  Future<void> _checkCurrentUser() async {
+    User user = await FirebaseAuth.instance.currentUser!;
+    _updateUser(user);
+  }
+
   void _updateUser(User user) {
     // print('Userid: ${user.uid}');
     setState(() {
@@ -26,10 +38,9 @@ class _LandingPageState extends State<LandingPage> {
         onSignIn: _updateUser,
       );
     } else {
+      var _user;
       return HomePage(
-        onSignOut: () {
-          return _updateUser(user);
-        },
+        onSignOut: () => _updateUser(_user),
       );
     }
   }
