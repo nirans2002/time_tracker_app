@@ -8,14 +8,14 @@ import 'package:flutter/foundation.dart';
 class SignInPage extends StatelessWidget {
   //callback for landing page
   SignInPage({@required this.onSignIn});
-  final Function(User) onSignIn;
+  final Function(FirebaseUser) onSignIn;
 
 // signin Anonymously
   Future<void> _signInAnonymously() async {
     await Firebase.initializeApp();
     try {
       final authResult = await FirebaseAuth.instance.signInAnonymously();
-      onSignIn(authResult.user!);
+      onSignIn(authResult.user);
       // print('${authResult.user!.uid}');
     } catch (e) {
       print(e.toString());
