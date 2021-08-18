@@ -42,6 +42,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return StreamBuilder(
         stream: widget.auth.onAuthStateChanged,
+        // initialData: ,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             User user = snapshot.data;
