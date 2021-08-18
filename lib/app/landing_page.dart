@@ -14,7 +14,7 @@ class LandingPage extends StatelessWidget {
         stream: auth.onAuthStateChanged,
         // initialData: ,
         builder: (context, snapshot) {
-          if (snapshot.hasData) {
+          if (snapshot.connectionState == ConnectionState.active) {
             User user = snapshot.data;
 
             if (user == null) {
