@@ -10,6 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // remove debug banner
+      debugShowCheckedModeBanner: false,
       title: 'Time Tracker',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
