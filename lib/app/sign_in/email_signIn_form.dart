@@ -56,6 +56,9 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
           labelText: "Email",
           hintText: 'johnappleseed@example.com',
         ),
+        autocorrect: false,
+        keyboardType: TextInputType.emailAddress,
+        textInputAction: TextInputAction.next,
         // onChanged: (value) => email = value,
       ),
       SizedBox(height: 8.0),
@@ -66,6 +69,8 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
           labelText: "Password",
         ),
         obscureText: true,
+        textInputAction: TextInputAction.done,
+
         // onChanged: (value) => password = value,
       ),
       SizedBox(height: 8.0),
