@@ -30,6 +30,15 @@ class SignInPage extends StatelessWidget {
     }
   }
 
+  // signin facebook
+  Future<void> _signInWithFacebook() async {
+    try {
+      await auth.signInWithFacebook();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +81,7 @@ class SignInPage extends StatelessWidget {
             assetName: "images/facebook-logo.png",
             text: "Sign in with Facebook",
             color: Color(0xFF334092),
-            onPressed: () {},
+            onPressed: _signInWithFacebook,
             textColor: Colors.white,
           ),
           SizedBox(
