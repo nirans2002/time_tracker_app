@@ -57,7 +57,7 @@ class SignInPage extends StatelessWidget {
         title: Text("Time Tracker  App"),
         elevation: 10.0,
       ),
-      body: _buildContent(context),
+      body: SingleChildScrollView(child: _buildContent(context)),
       backgroundColor: Colors.grey[50],
     );
   }
