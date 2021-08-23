@@ -50,29 +50,9 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
         : 'Have an account? Sign in';
 
     return [
-      TextField(
-        controller: _emailController,
-        decoration: InputDecoration(
-          labelText: "Email",
-          hintText: 'johnappleseed@example.com',
-        ),
-        autocorrect: false,
-        keyboardType: TextInputType.emailAddress,
-        textInputAction: TextInputAction.next,
-        // onChanged: (value) => email = value,
-      ),
+      _buildEmailTextField(),
       SizedBox(height: 8.0),
-      TextField(
-        controller: _passwordController,
-
-        decoration: InputDecoration(
-          labelText: "Password",
-        ),
-        obscureText: true,
-        textInputAction: TextInputAction.done,
-
-        // onChanged: (value) => password = value,
-      ),
+      _buildPasswordTextField(),
       SizedBox(height: 8.0),
       FormSubmitButton(
         onPressed: _submit,
@@ -84,6 +64,34 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
         child: Text(secondaryText),
       ),
     ];
+  }
+
+  TextField _buildPasswordTextField() {
+    return TextField(
+      controller: _passwordController,
+
+      decoration: InputDecoration(
+        labelText: "Password",
+      ),
+      obscureText: true,
+      textInputAction: TextInputAction.done,
+
+      // onChanged: (value) => password = value,
+    );
+  }
+
+  TextField _buildEmailTextField() {
+    return TextField(
+      controller: _emailController,
+      decoration: InputDecoration(
+        labelText: "Email",
+        hintText: 'johnappleseed@example.com',
+      ),
+      autocorrect: false,
+      keyboardType: TextInputType.emailAddress,
+      textInputAction: TextInputAction.next,
+      // onChanged: (value) => email = value,
+    );
   }
 
   @override
