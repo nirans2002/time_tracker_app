@@ -65,68 +65,72 @@ class SignInPage extends StatelessWidget {
   Widget _buildContent(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(16.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Text(
-            "Sign in",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 32.0,
-              fontWeight: FontWeight.w600,
-            ),
+      child: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Text(
+                "Sign in",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 32.0,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 16.0),
+              SocialSignInButton(
+                assetName: "images/google-logo.png",
+                color: Colors.white,
+                text: "Sign in with Google",
+                textColor: Colors.black87,
+                onPressed: _signInWithGoogle,
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              SocialSignInButton(
+                assetName: "images/facebook-logo.png",
+                text: "Sign in with Facebook",
+                color: Color(0xFF334092),
+                onPressed: _signInWithFacebook,
+                textColor: Colors.white,
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              SignInButton(
+                text: "Sign in with Email",
+                color: Colors.teal,
+                borderRadius: 4.0,
+                onPressed: () => _signInWithEmail(context),
+                textColor: Colors.white,
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              Text(
+                'or',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 8.0,
+              ),
+              SignInButton(
+                text: "Sign in as Anonymous",
+                color: Colors.greenAccent,
+                borderRadius: 4.0,
+                onPressed: _signInAnonymously,
+                textColor: Colors.black,
+              ),
+            ],
           ),
-          SizedBox(height: 16.0),
-          SocialSignInButton(
-            assetName: "images/google-logo.png",
-            color: Colors.white,
-            text: "Sign in with Google",
-            textColor: Colors.black87,
-            onPressed: _signInWithGoogle,
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          SocialSignInButton(
-            assetName: "images/facebook-logo.png",
-            text: "Sign in with Facebook",
-            color: Color(0xFF334092),
-            onPressed: _signInWithFacebook,
-            textColor: Colors.white,
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          SignInButton(
-            text: "Sign in with Email",
-            color: Colors.teal,
-            borderRadius: 4.0,
-            onPressed: () => _signInWithEmail(context),
-            textColor: Colors.white,
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          Text(
-            'or',
-            style: TextStyle(
-              fontSize: 14.0,
-              color: Colors.black,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          SignInButton(
-            text: "Sign in as Anonymous",
-            color: Colors.greenAccent,
-            borderRadius: 4.0,
-            onPressed: _signInAnonymously,
-            textColor: Colors.black,
-          ),
-        ],
+        ),
       ),
     );
   }
