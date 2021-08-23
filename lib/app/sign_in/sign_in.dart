@@ -57,6 +57,7 @@ class SignInPage extends StatelessWidget {
         title: Text("Time Tracker  App"),
         elevation: 10.0,
       ),
+      // _buildContent wrapped in SingleChildScrollView for fixing px overflow
       body: SingleChildScrollView(child: _buildContent(context)),
       backgroundColor: Colors.grey[50],
     );
