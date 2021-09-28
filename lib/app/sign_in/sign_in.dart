@@ -32,7 +32,9 @@ class SignInPage extends StatelessWidget {
       final auth = Provider.of<AuthBase>(context, listen: false);
       await auth.signInWithGoogle();
     } on PlatformException catch (e) {
-      _showSignInError(context, e);
+      if (e.code != 'ERROR_ABORTED_BY_USER') {
+        _showSignInError(context, e);
+      }
     }
   }
 
@@ -43,7 +45,9 @@ class SignInPage extends StatelessWidget {
 
       await auth.signInWithFacebook();
     } on PlatformException catch (e) {
-      _showSignInError(context, e);
+      if (e.code != 'ERROR_ABORTED_BY_USER') {
+        _showSignInError(context, e);
+      }
     }
   }
 
