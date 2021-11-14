@@ -28,6 +28,7 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
   void _submit() async {
     setState(() {
       _submitted = true;
+      // _submitted = true;
       _isloading = true;
     });
     try {
